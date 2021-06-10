@@ -1,0 +1,191 @@
+@charset "utf-8";
+html {
+    font-family: 'Stint Ultra Condensed', cursive;
+    font-size: 14px;
+}
+
+body {
+    overflow-x: hidden;
+    /*가로스크롤 삭제*/
+    color: rgb(29, 29, 31);
+    letter-spacing: -0.05em;
+    /*자간 */
+    background: white;
+}
+
+p {
+    line-height: 1.6;
+    /*행간*/
+}
+
+a {
+    color: rgb(29, 29, 31);
+    text-decoration: none;
+    /*링크 밑줄 없애기*/
+}
+
+.global-nav {
+    height: 44px;
+    padding: 0 1rem;
+    /*rem은 폰트사이즈 단위.*/
+}
+
+.local-nav {
+    height: 52px;
+    border-bottom: 1px solid #ddd;
+    /*바(보더)생성*/
+}
+
+.global-nav-links,
+.local-nav-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.global-nav-links {
+    justify-content: space-between;
+}
+
+.product-name {
+    margin-right: auto;
+    font-size: 1.4rem;
+    font-weight: bold;
+    /*마진 오른쪽을 다 써서 옆에 잇는것을 다 보내버림.*/
+}
+
+.local-nav-links a:not(.product-name) {
+    /*여집합*/
+    margin-left: 2em;
+    font-size: 0.8rem;
+}
+
+
+/*부모가 더 힘이 쎄다., id가 class보다 앞선다. important 하면 무조건 적용한다. 등등 우선순위 따져야 함.*/
+
+.scroll-section {
+    padding-top: 50vh;
+    /*윈도우 창의 높이의 절반만큼 padding top을 준다. */
+}
+
+#scroll-section-0 h1 {
+    font-size: 4rem;
+    /*html의 폰트사이즈가 14px로 되어있으므로 56px*/
+    text-align: center;
+}
+
+.main-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.1em 0;
+    height: 3em;
+    /*현재 context의 font사이즈의 3배높이*/
+    font-size: 2.5rem;
+    /*html의 font-size의 2.5배*/
+    /*background 색을 넣어서 영역을 확인하고, 다시 지웠음.*/
+}
+
+.main-message p {
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main-message small {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1rem;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #888;
+    padding: 0 1rem;
+    max-width: 1000px;
+}
+
+.description strong {
+    font-size: 3rem;
+    color: rgb(29, 29, 31);
+    float: left;
+    margin-right: 0.2em;
+    /*현재 context의 0.2배.*/
+}
+
+.desc-message {
+    font-weight: bold;
+    width: 50%;
+}
+
+.pin {
+    width: 1px;
+    height: 100px;
+    background: rgb(29, 29, 31);
+}
+
+.mid-message {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: #888;
+    padding: 0 1rem;
+}
+
+.mid-message strong {
+    color: rgb(29, 29, 31);
+}
+
+.canvas-caption {
+    color: #888;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    background-color: rgb(255, 136, 0);
+}
+
+@media(min-width:1024px)
+/*어떤 미디어 타입인건지에 대해서(mobile, 데스크탑)*/
+
+{
+    #scroll-section-0 h1 {
+        font-size: 9vw;
+        /*윈도우 사이즈의 9퍼센트 크기*/
+    }
+    .main-message {
+        font-size: 4vw;
+    }
+    .description {
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+    .desc-message strong {
+        font-size: 6rem;
+    }
+    #scroll-section-2 .main-message {
+        font-size: 6vw;
+    }
+    .main-message small {
+        font-size: 1.5vw;
+    }
+    .desc-message {
+        width: 20%;
+    }
+    .mid-message {
+        font-size: 4vw;
+    }
+    .canvas-caption {
+        font-size: 2rem;
+    }
+    /*창크기에 따라서 하는건 vw하고, 아닌건 rem*/
+}
